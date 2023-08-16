@@ -9,7 +9,7 @@ const passport = require('passport');
 const MongoStore = require('connect-mongo');
 
 const app = express();
-const port = 8000 || process.env.PORT;
+const port = 8080 || process.env.PORT;
 
 app.use(session({
     secret: 'dodo',
