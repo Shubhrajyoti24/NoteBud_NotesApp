@@ -35,7 +35,7 @@ app.use(methodOverride("_method"));
 
 //Connect to the database before listening
 connectDB().then(() => {
-	app.listen(port, () => {
+	app.listen(port, '0.0.0.0', () => {
 			console.log("listening for requests");
 	})
 })
@@ -59,6 +59,6 @@ app.get('*', function(req, res) {
     res.status(404).render('404');
 })
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`App listening on port ${port}`);
 })
