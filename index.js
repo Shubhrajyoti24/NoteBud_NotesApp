@@ -9,7 +9,7 @@ const passport = require('passport');
 const MongoStore = require('connect-mongo');
 
 const app = express();
-const port = 5050 || process.env.PORT;
+const port = 4030 || process.env.PORT;
 
 app.use(session({
     secret: 'dodo',
@@ -35,7 +35,7 @@ app.use(methodOverride("_method"));
 
 //Connect to the database before listening
 connectDB().then(() => {
-	app.listen(port, '0.0.0.0', () => {
+	app.listen(port, () => {
 			console.log("listening for requests");
 	})
 })
@@ -59,6 +59,6 @@ app.get('*', function(req, res) {
     res.status(404).render('404');
 })
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
     console.log(`App listening on port ${port}`);
 })
